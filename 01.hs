@@ -2,7 +2,7 @@ scale :: Floating a => Integer -> a
 scale a = logBase 10 $ fromIntegral a
 
 intScale :: Integer -> Integer
-intScale = floor . scale
+intScale = truncate . scale
 
 firstDigit :: Integer -> (Integer, Integer)
 firstDigit a =
