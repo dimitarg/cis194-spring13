@@ -18,8 +18,4 @@ fibs2' = let
 
 fibs2 :: [Integer]
 --unfoldr :: (b -> Maybe (a, b)) -> b -> [a]
-
-fibs2 = let
-  next :: (Integer, Integer) -> Maybe (Integer, (Integer, Integer))
-  next (x, y) = Just (x, (y, (x + y)))
-  in unfoldr next (0, 1)
+fibs2 = unfoldr (\(x, y) -> Just (x, (y, (x + y)))) (0, 1)
